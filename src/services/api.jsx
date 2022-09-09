@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://api.zippopotam.us/us/90210' });
+const api = axios.create({ baseURL: 'https://viacep.com.br/ws/' });
 
 export default api;
