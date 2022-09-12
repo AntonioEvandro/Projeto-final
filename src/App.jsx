@@ -23,7 +23,7 @@ function App() {
 
   getCep(codigoCep);
 
-  console.log(cep);
+  //console.log(cep);
 
   return (
     <div className="App">
@@ -32,7 +32,7 @@ function App() {
       <div className="containerCep">
         <form className="form">
           <input
-            type="search"
+            type="number"
             value={codigoCep}
             onChange={mudar}
             className="search"
