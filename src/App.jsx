@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import api from './services/api';
-import CepEncontrado from './components/CepEncontrado';
+import BuscarCep from './components/BuscarCep';
 
 function App() {
   const [cep, setCep] = useState([]);
@@ -43,7 +43,7 @@ function App() {
 
         <div className="busca">
           {cep?.map((cod) => {
-            return <CepEncontrado cod={cod} />;
+            return <BuscarCep cod={cod} />;
           })}
         </div>
       </div>
