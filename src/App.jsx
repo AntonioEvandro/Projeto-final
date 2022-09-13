@@ -1,27 +1,32 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import api from './services/api';
 import BuscarCep from './components/BuscarCep';
+import Cep from "react-simple-cep-mask";
 
 function App() {
-  const [cep, setCep] = useState([]);
+  const [cep, setCep] = useState("");
+  const [cepData, setCepData] = useState([])
 
   const getCep = async (codCep) => {
     const newCep = await api
-      .get(`${codCep.toString()}/json`)
+      .get(`${codCep.toString()}`)
       .then((response) => response.data)
       .catch((err) => console.log(err));
 
-    //   console.log(newCep.data)
-    setCep([cep, newCep]);
+    console.log(newCep.data)
+    setCepData(newCep)
   };
 
-  const [codigoCep, setCodigoCep] = useState([]);
-  const mudar = (e) => {
-    setCodigoCep(e.target.value);
-  };
+  useEffect (()=>{
+    console.log("Tamanho: " + cep.length)
+    console.log("CEP: " + cep)
+    if(cep.length === 9) {
+      getCep(cep);
+    } 
+  },[cep])
 
-  getCep(codigoCep);
+  //getCep(codigoCep);
 
   //console.log(cep);
 
@@ -30,22 +35,18 @@ function App() {
       <h1>Buscar Cep</h1>
 
       <div className="containerCep">
-        <form className="form">
-          <input
-            type="number"
-            value={codigoCep}
-            onChange={mudar}
-            className="search"
-            placeholder="Digite o CEP"
-            required
-          ></input>
-        </form>
+        <Cep
+          value={cep}
+          onChange={ (cep) => setCep(cep) }
+          className="someClass"
+          placeholder="Digite seu cep"
+        />
 
         <div className="busca">
-          {cep?.map((cod) => {
-            return <BuscarCep cod={cod} />;
-          })}
+          <BuscarCep cod={cepData} />
         </div>
+
+        <h4>Masked value: {cep}</h4>
       </div>
     </div>
   );
