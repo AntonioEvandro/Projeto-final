@@ -1,13 +1,6 @@
 #root {
   text-align: center;
 }
-/* Variáveis*/
-:root, html[data-theme='escuro']{
-  --cinza-claro: #eee;
-  --cinza: #888;
-  --cinza-medio: #333;
-  --cinza-escuro: #2a2a2a;
-}
 
 html,
 body {
@@ -25,12 +18,12 @@ h1 {
   padding: 30px 10px;
   font-size: 3em;
   line-height: 1;
-  color: #eee;
+  color: #333;
   margin: 0 0 30px;
-  background-color: #333;
-  border-bottom: 4px solid #2a2a2a;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ccc;
+  border-bottom: 4px solid #cacaca;
+  border-radius: 10px;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 input {
@@ -39,20 +32,31 @@ input {
   text-align: center;
   font-size: 24px;
   border-radius: 8px;
+  color: #000;
+  background-color: #aaa;
+}
+input:hover{
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in;
+}input:focus{
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.2s ease-in;
 }
 
 .dados {
   margin-top: 1.5em;
-  padding: 1.5em 0;
+  padding: 1em 0;
   display: inline-block;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
   border-radius: 15px;
-  background-color: red;
+  background-color: #555;
   font-size: 24px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 }
 
 .dados div {
-  margin: 25px 0;
+  margin: 20px 0;
+  padding: 3px;
 }
