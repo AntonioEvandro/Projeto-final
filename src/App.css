@@ -1,22 +1,19 @@
 #root {
   text-align: center;
 }
+/* Variáveis*/
+:root, html[data-theme='escuro']{
+  --cinza-claro: #eee;
+  --cinza: #888;
+  --cinza-medio: #333;
+  --cinza-escuro: #2a2a2a;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
   background-color: #333;
-}
-
-input {
-  padding: 8px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.cep {
-  padding: 2em;
 }
 
 .read-the-docs {
@@ -26,6 +23,8 @@ input {
 h1 {
   text-align: center;
   padding: 30px 10px;
+  font-size: 3em;
+  line-height: 1;
   color: #eee;
   margin: 0 0 30px;
   background-color: #333;
@@ -34,8 +33,26 @@ h1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.ceps {
-  display: flex;
+input {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+.dados {
+  margin-top: 1.5em;
+  padding: 1.5em 0;
+  display: inline-block;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
+  border-radius: 15px;
+  background-color: red;
+  font-size: 24px;
+}
+
+.dados div {
+  margin: 25px 0;
 }

@@ -29,10 +29,12 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3em;
-  line-height: 1;
+.App{
+  margin: auto;
+  text-align: center;
+  width: 75%;
 }
+
 
 button {
   border-radius: 8px;

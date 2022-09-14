@@ -46,7 +46,7 @@ function App() {
           <BuscarCep cod={cepData} />
         </div>
 
-        <h4>Masked value: {cep}</h4>
+        {/*<h4>Masked value: {cep}</h4>*/}
       </div>
     </div>
   );

@@ -1,12 +1,13 @@
 const BuscarCep = function (props) {
   return (
-    <div className="cep">
+    <div className="dados">
       {console.log(props.cod)}
-      <div className="item">{props.cod?.cep}</div>
-      <div className="item">{props.cod?.address}</div>
-      <div className="item">{props.cod?.district}</div>
-      <div className="item">{props.cod?.state}</div>
-      <div className="item">{props.cod?.ddd}</div>
+      <div className="cep">Código Postal: {props.cod?.cep}</div>
+      <div className="endereco">{props.cod?.address}</div>
+      <div className="distrito">Bairro/Distrito: {props.cod?.district}</div>
+      <div className="cidade">{props.cod?.city}</div>
+      <div className="estado">UF: {props.cod?.state}</div>
+      <div className="ddd">DDD: ({props.cod?.ddd})</div>
     </div>
   );
 };
