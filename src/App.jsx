@@ -36,7 +36,7 @@ function App() {
           className="someClass"
           placeholder="Digite seu cep"
         />
-        <button className="limpar" onClick={() => setCep("")}>Limpar</button>
+        <button className="limpar" onClick={() => {setCep(""); setCepData("")}}>Limpar</button>
 
         <div className="busca">
           <BuscarCep cod={cepData} />
