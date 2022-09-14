@@ -14,7 +14,6 @@ function App() {
       .then((response) => response.data)
       .catch((err) => console.log(err));
 
-    console.log(newCep.data)
     setCepData(newCep)
   };
 
@@ -23,12 +22,8 @@ function App() {
     console.log("CEP: " + cep)
     if(cep.length === 9) {
       getCep(cep);
-    } 
+    }
   },[cep])
-
-  //getCep(codigoCep);
-
-  //console.log(cep);
 
   return (
     <div className="App">
@@ -41,6 +36,7 @@ function App() {
           className="someClass"
           placeholder="Digite seu cep"
         />
+        <button className="limpar" onClick={() => setCep("")}>Limpar</button>
 
         <div className="busca">
           <BuscarCep cod={cepData} />
